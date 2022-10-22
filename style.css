@@ -1,0 +1,121 @@
+#MW_Table_Gen .toolBar {
+  float: right;
+  padding: 10px;
+  width: 15%;
+  overflow: scroll;
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px -1px #292929;
+  height: 90vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  position: relative;
+}
+#MW_Table_Gen .toolBar::-webkit-scrollbar {
+  display: none;
+}
+#MW_Table_Gen .toolBar .rC h3,
+#MW_Table_Gen .toolBar .table-colors h3,
+#MW_Table_Gen .toolBar .text_align h3,
+#MW_Table_Gen .toolBar .tableBorder h3,
+#MW_Table_Gen .toolBar .tDimensions h3 {
+  font-size: 15px;
+}
+#MW_Table_Gen .toolBar .rC div,
+#MW_Table_Gen .toolBar .table-colors div,
+#MW_Table_Gen .toolBar .text_align div,
+#MW_Table_Gen .toolBar .tableBorder div,
+#MW_Table_Gen .toolBar .tDimensions div {
+  font-size: 12px;
+}
+#MW_Table_Gen .toolBar .rC div input,
+#MW_Table_Gen .toolBar .rC div option,
+#MW_Table_Gen .toolBar .table-colors div input,
+#MW_Table_Gen .toolBar .table-colors div option,
+#MW_Table_Gen .toolBar .text_align div input,
+#MW_Table_Gen .toolBar .text_align div option,
+#MW_Table_Gen .toolBar .tableBorder div input,
+#MW_Table_Gen .toolBar .tableBorder div option,
+#MW_Table_Gen .toolBar .tDimensions div input,
+#MW_Table_Gen .toolBar .tDimensions div option {
+  float: right;
+  width: 30px;
+  margin-left: 3px;
+}
+#MW_Table_Gen .toolBar .rC div select,
+#MW_Table_Gen .toolBar .table-colors div select,
+#MW_Table_Gen .toolBar .text_align div select,
+#MW_Table_Gen .toolBar .tableBorder div select,
+#MW_Table_Gen .toolBar .tDimensions div select {
+  float: right;
+  width: 60px;
+}
+#MW_Table_Gen .preview {
+  overflow-x: scroll;
+  height: auto;
+  width: 80%;
+  min-height: 90vh;
+  float: left;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px -1px #393939;
+}
+#MW_Table_Gen .code {
+  clear: both;
+}
+#MW_Table_Gen .code textarea {
+  width: 450px;
+  height: 200px;
+}
+
+@media screen and (max-width: 940px) {
+  #MW_Table_Gen .toolBar {
+    float: none;
+    height: 300px;
+    width: auto;
+  }
+  #MW_Table_Gen .toolBar .rC,
+#MW_Table_Gen .toolBar .table-colors,
+#MW_Table_Gen .toolBar .text_align,
+#MW_Table_Gen .toolBar .tableBorder,
+#MW_Table_Gen .toolBar .tDimensions {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: -3px -3px 5px #f5f4f4, 3px 3px 5px rgba(94, 104, 121, 0.945);
+    margin-top: 20px;
+    height: auto;
+    width: 98.5%;
+  }
+  #MW_Table_Gen .toolBar .rC h3,
+#MW_Table_Gen .toolBar .table-colors h3,
+#MW_Table_Gen .toolBar .text_align h3,
+#MW_Table_Gen .toolBar .tableBorder h3,
+#MW_Table_Gen .toolBar .tDimensions h3 {
+    font-size: 17px;
+  }
+  #MW_Table_Gen .toolBar .rC div,
+#MW_Table_Gen .toolBar .table-colors div,
+#MW_Table_Gen .toolBar .text_align div,
+#MW_Table_Gen .toolBar .tableBorder div,
+#MW_Table_Gen .toolBar .tDimensions div {
+    font-size: 15px;
+  }
+  #MW_Table_Gen .preview {
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+    min-height: 50vh;
+    float: none;
+  }
+  #MW_Table_Gen .code {
+    clear: both;
+  }
+  #MW_Table_Gen .code textarea {
+    width: 350px;
+    height: 200px;
+  }
+}
+.article {
+  width: 90%;
+  text-align: justify;
+}/*# sourceMappingURL=style.css.map */
