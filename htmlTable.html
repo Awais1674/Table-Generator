@@ -1,0 +1,283 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table Generator</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <body>
+
+        <form name="MW_Table_Gen" id="MW_Table_Gen">
+            <div class="MW_Table_Gen">
+                <div class="t-cont">
+                    <div class="toolBar">
+                        <!-- Row Column -->
+                        <div class="rC">
+                            <h3>Rows and Column</h3>
+                            <div title="Not including the header row">Rows: <input name="MW_RowCount" value="3" type="text" size="2" maxlength="2" onkeyup="javascript:MW_Table_Code();"></div>
+                            <br>
+                            <div>Columns: <input name="MW_ColumnCount" value="3" type="text" size="2" maxlength="2" onkeyup="javascript:MW_Table_Code();"></div>
+                        </div>
+                        <!-- colouring -->
+                        <div class="table-colors">
+                            <h3>Colors</h3>
+                            <div>Text Color: <input name="MW_TextColor" id="MW_TextColor" value="#000000" type="color" onchange="MW_Table_Code();">
+                            </div>
+                            <br>
+                            <div>Background: <input name="MW_BackgroundColor" id="MW_BackgroundColor" value="#FFFFFF" type="color" onchange="MW_Table_Code();">
+                            </div>
+                            <br>
+                            <div>Header BG: <input name="MW_HeaderColor" id="MW_HeaderColor" value="#0fb8f0" type="color" onchange="MW_Table_Code();">
+                            </div>
+                            <br>
+                            <div>Header T: <input name="MW_headertext" id="MW_headertext" value="#ffffff" type="color" onchange="MW_Table_Code();">
+                            </div>
+                        </div>
+                        <!-- text align -->
+                        <div class="text_align">
+                            <h3>Text Alignment</h3>
+                            <div>Head : <select name="MW_textAlignheader" id="MW_textAlignheader" onchange="javascript:MW_Table_Code();" style="max-width:70px;">
+                            <option value="center">center</option>
+                            <option value="left">left</option>
+                            <option value="right">right</option>
+                            </select>
+                            </div>
+                            <br>
+                            <div>Body : <select name="MW_textAligncells" id="MW_textAligncells" onchange="javascript:MW_Table_Code();" style="max-width:70px;">
+                                <option value="left">left</option>
+                                <option value="center">center</option>
+                                <option value="right">right</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="tableBorder">
+                            <h3>Border</h3>
+                            <div>Color: <input name="MW_BorderColor" id="MW_BorderColor" value="#000000" type="color" onchange="MW_Table_Code();">
+                            </div>
+                            <br>
+                            <!-- borderwidth -->
+                            <div>Width: <input name="MW_BorderWidth" value="1" type="text" size="2" maxlength="" onkeyup="javascript:MW_Table_Code();">
+                                <select name="MW_BorderWidthMetric" id="MW_BorderWidthMetric" onchange="javascript:MW_Table_Code();" style="max-width:70px;">
+                            <optgroup label="Absolute">
+                            <option value="cm"> Centimeters
+                            </option><option value="mm"> Millimeters
+                            </option><option value="in"> Inches
+                            </option><option value="pt"> Points
+                            </option><option value="pc"> Picas
+                            </option><option value="px" selected=""> Pixels
+                            </option></optgroup>
+                            <optgroup label="Font-Relative">
+                            <option value="em"> Em
+                            </option><option value="ex"> Ex
+                            </option><option value="ch"> Ch
+                            </option><option value="rem"> Rem
+                            </option></optgroup>
+                            <optgroup label="Viewport-Percentage">
+                            <option value="vw"> Vw
+                            </option><option value="vh"> Vh
+                            </option><option value="vmin"> Vmin
+                            </option><option value="vmax"> Vmax
+                            </option></optgroup>
+                            </select>
+                            </div>
+                            <br>
+                            <div>Style:
+                                <select name="MW_BorderStyle" id="MW_BorderStyle" onchange="javascript:MW_Table_Code();">
+                                 <option value="solid" selected=""> Solid
+                                </option><option value="dashed"> Dashed
+                                </option><option value="dotted"> Dotted
+                                </option><option value="double"> Double
+                                </option><option value="groove"> Groove
+                                </option><option value="ridge"> Ridge
+                                </option><option value="inset"> Inset
+                                </option><option value="outset"> Outset
+                                </option></select>
+                            </div>
+                            <br>
+                            <div>Collapse Border:
+                                <span onclick="MW_Table_Code();">
+                                <input name="MW_BorderCollapse" type="checkbox" value="collapse" checked="">
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="tDimensions">
+                            <h3>Dimensions</h3>
+                            <div>Padding: <input name="MW_Padding" value="3" size="2" type="text" maxlength="2" onkeyup="javascript:MW_Table_Code();">
+                                <select name="MW_PaddingMetric" id="MW_PaddingMetric" onchange="javascript:MW_Table_Code();" style="max-width:70px;">
+                            <optgroup label="Absolute">
+                            <option value="cm"> Centimeters
+                            </option><option value="mm"> Millimeters
+                            </option><option value="in"> Inches
+                            </option><option value="pt"> Points
+                            </option><option value="pc"> Picas
+                            </option><option value="px" selected=""> Pixels
+                            </option></optgroup>
+                            <optgroup label="Font-Relative">
+                            <option value="em"> Em
+                            </option><option value="ex"> Ex
+                            </option><option value="ch"> Ch
+                            </option><option value="rem"> Rem
+                            </option></optgroup>
+                            <optgroup label="Viewport-Percentage">
+                            <option value="vw"> Vw
+                            </option><option value="vh"> Vh
+                            </option><option value="vmin"> Vmin
+                            </option><option value="vmax"> Vmax
+                            </option></optgroup>
+                            </select>
+                            </div>
+                            <br>
+                            <div>Width: <input name="MWTableWidth" value="100" type="text" size="3" maxlength="3" onkeyup="javascript:MW_Table_Code();">
+
+                                <select name="MWTableWidthMetric" id="MWTableWidthMetric" onchange="javascript:MW_Table_Code();" style="max-width:70px;">
+                            <optgroup label="Absolute">
+                            <option value="cm"> Centimeters
+                            </option><option value="mm"> Millimeters
+                            </option><option value="in"> Inches
+                            </option><option value="pt"> Points
+                            </option><option value="pc"> Picas
+                            </option><option value="px"> Pixels
+                            </option></optgroup>
+                            <optgroup label="Font-Relative">
+                            <option value="em"> Em
+                            </option><option value="ex"> Ex
+                            </option><option value="ch"> Ch
+                            </option><option value="rem"> Rem
+                            </option></optgroup>
+                            <optgroup label="Viewport-Percentage">
+                            <option value="vw"> Vw
+                            </option><option value="vh"> Vh
+                            </option><option value="vmin"> Vmin
+                            </option><option value="vmax"> Vmax
+                            </option></optgroup>
+                            <option value="%" selected=""> Percent
+                            </option></select>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="preview">
+                        <div id="displayResult">
+                            <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
+                            <style>
+                                table.MW_GeneratedTable {
+                                    width: 100%;
+                                    background-color: #ffffff;
+                                    border-collapse: collapse;
+                                    border-width: 1px;
+                                    border-color: #000000;
+                                    border-style: solid;
+                                    color: #000000;
+                                }
+                                
+                                table.MW_GeneratedTable td,
+                                table.MW_GeneratedTable th {
+                                    border-width: 1px;
+                                    border-color: #000000;
+                                    border-style: solid;
+                                    padding: 3px;
+                                }
+                                
+                                table.MW_GeneratedTable tbody {
+                                    text-align: left;
+                                }
+                                
+                                table.MW_GeneratedTable thead {
+                                    background-color: #0fb8f0;
+                                    color: #ffffff;
+                                    text-align: center;
+                                }
+                            </style>
+
+                            <!-- HTML Code: Place this code in the document's body (between the 'body' tags) where the table should appear -->
+                            <table class="GeneratedTable">
+                                <thead>
+                                    <tr>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- Codes by Quackit.com -->
+
+                        </div>
+                        <p onclick="MW_Table_Code();"><input name="MW_DisplaySampleText" type="checkbox" value="Yes" checked=""> Sample Text</p>
+                    </div>
+                </div>
+
+                <div class="code">
+                    <br><br>
+                    <h2>The Code</h2>
+                    <p>Generated Code:</p>
+                    <textarea name="generatedCode" class="generatedCode" onclick="this.focus();this.select()"></textarea>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <center>
+            <section title="article" class="article">
+
+                <h2>What is Table Generator?</h2>
+                <p>
+                    HTML Table generator is an online tool to generate table and style it using CSS. By which you cannot only generate a table but you can easily convert into HTML and CSS code.
+                </p>
+                <h2>How it works?</h2>
+                <p>
+                    This HTML table generator online tool is v ery easy to use.
+                    <br> 1. Just select the number of rows.
+                    <br> 2. Then select the numer of the columns.
+                    <br> 3. Then the rows and columns will be generated atomatically.
+                    <br> 4. Now you can style the using the styling tools given in the sidebar/or top ool bar.
+                    <br> 5. The code will be generated automatically.
+                    <br> 6. You can select the code and copy it.
+                    <br>
+                    <br>
+                    <b>Usage:</b>
+                    <p>
+                        You can use the code directly in your website or whereever you want to use it.
+                    </p>
+                </p>
+                <h2>FaQs</h2>
+                <b>Can I use the code in my website?</b>
+                <p>Yes, you can use the code anywhere you want to use it.</p>
+                <b>Is the code copyright free?</b>
+                <p>Yes, the code is copyright free.</p>
+
+            </section>
+        </center>
+        <script>
+            document.getElementsByTagName('body').onload = MW_Table_Code();
+        </script>
+    </body>
+</body>
+
+</html>
